@@ -1,7 +1,7 @@
 # connection-app
 Connecting people to provide and receive help during the Covid19 pandemic
 
-Richard
+Richard is the best! 
 Lucy
-Rebekah
+Rebekah is ok too 
 Andrew
