@@ -1,6 +1,6 @@
-const mongoose = require ('mongoose');
+// const mongoose = require ('mongoose');
 const { Schema, model } = require('mongoose'); 
-const encrypt = require('mongoose-encryption')
+// const encrypt = require('mongoose-encryption')
 const crypto = require('crypto');
 
 const userSchema = new Schema({
@@ -23,10 +23,8 @@ const userSchema = new Schema({
 
 })
 
-// userSchema.plugin(encrypt, {secret: process.env.SECRET, encryptedFields:['password']})
-// mongoose-encryption plug in
 
-siteUser.statics.validateSignup = async function(email, username) {
+userSchema.statics.validateSignup = async function(email, username) {
     let existingEmail = await this.findOne({ email });
     let existingUserName = await this.findOne({ username });
     //object || null

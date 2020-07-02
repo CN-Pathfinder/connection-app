@@ -20,7 +20,7 @@ router.get('/register', async(req, res)=>{
 if (await siteUser.validateSignup(name, email)){
     res.render('platform', {err: 'A user with that username already exists - please choose another!'});
     return; 
-    
+
 }
 
 })
