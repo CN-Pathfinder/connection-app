@@ -4,9 +4,8 @@ import './RegisterNav.css';
 const RegisterNav = () => {
     return (
         <nav>
-            <ul>
-                <button><a href="#Home">Return to home/Login</a></button>
-            </ul>
+            <div>About app</div>
+            <button id="navRegisterBtn"><a href="/">Return to home/Login</a></button>
         </nav>
     )
 };

@@ -1,0 +1,8 @@
+#platformWrapper {
+    background-color: lightskyblue;
+    height: 100vh;
+}
+#platformText {
+    font-size: 30px;
+    margin: 100px;
+}

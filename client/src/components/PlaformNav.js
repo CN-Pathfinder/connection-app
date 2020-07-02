@@ -4,9 +4,8 @@ import './PlatformNav.css';
 const PlatformNav = () => {
     return (
         <nav>
-            <ul>
-                <button><a href="#Home">Logout</a></button>
-            </ul>
+            <div>About app</div>
+            <button id="navRegisterBtn"><a href="/">Logout</a></button>
         </nav>
     )
 };

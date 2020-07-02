@@ -1,0 +1,9 @@
+nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 0 20px 0;
+    background-color: lightyellow;
+}
+#navRegisterBtn {
+    margin: 0 30px 0 30px;
+}

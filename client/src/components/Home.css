@@ -1,0 +1,21 @@
+#homeWrapper {
+    background-color: lightskyblue;
+    height: 100vh;
+}
+#homeNavDiv {
+
+}
+#loginDiv {
+    font-family: monospace;
+}
+#appName {
+    margin: 50px 0 50px 0;
+    font-size: 50px;
+    text-align: center;
+}
+#loginDiv {
+    text-align: center;
+}
+#hereToRegisterDiv {
+    margin-top: 20px;
+}
