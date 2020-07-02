@@ -2,7 +2,15 @@
     background-color: lightskyblue;
     height: 100vh;
 }
-#platformText {
-    font-size: 30px;
-    margin: 100px;
+#locationtext{
+    border: solid slategray 10px;
+}
+#locationdiv{
+    border: solid red 10px;
+}
+#locationdropdown{
+    border: solid blue 10px;
+}
+#locationcheckbox{
+    border: solid purple 10px;
 }
