@@ -1,20 +1,22 @@
-import React from "react";
-// import HomeNav from './components/HomeNav.js';
-import Home from './components/Home.js';
+import React, {Component} from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import './App.css';
+import Home from './components/Home';
 import Register from './components/Register.js';
 import Platform from './components/Platform.js';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-class App extends React.Component {
+class App extends Component {
     render() {
     return (
-      <BrowserRouter>
-          <div className="pagewrapper">
-          <div id="Home"><Home/></div>
-          <div id="Register"><Register/></div>
-          <div id="Register"><Platform/></div>
-          </div>
-          </BrowserRouter>
+      <div id="wholePageWrapper">
+        <BrowserRouter>
+          <Switch>
+            <Route exact path = "/" component = {Home} />
+            <Route exact path = "/register" component = {Register} />
+            <Route exact path = "/platform" component = {Platform} />
+          </Switch>
+        </BrowserRouter>
+      </div>
     );
   }};
 

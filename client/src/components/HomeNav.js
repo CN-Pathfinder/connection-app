@@ -5,9 +5,8 @@ import { Link } from 'react-router-dom';
 const HomeNav = () => {
     return (
         <nav>
-            <ul>
-                <button><Link to ="#Register">Register Here</Link></button>
-            </ul>
+            <div>About app</div>
+            <button id="navRegisterBtn"><Link to ="/register">Register Here</Link></button>
         </nav>
     )
 };
