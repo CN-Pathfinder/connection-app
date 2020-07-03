@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose'); 
 const app = express();
 const path = require('path')
 const keys = require('./config/keys')
@@ -12,8 +13,7 @@ mongoose.connect(keys.mongoURI, {
 
 
 app.use(express.urlencoded({extended: true}));
-// parses the url-encoded bodies(that are sent by html forms)
-
+// parses the url-encoded bodies(that are sent by html forms) 
 app.use(express.json());
 // parses the json bodies(that are sent by api clients) (don't need bodyparser anymore)
 
@@ -22,13 +22,15 @@ const loginRouter = require('./routes/loginrouter')
 
 
 
-app.set('/login', loginRouter);
-app.set('/register', registerRouter);
+app.use('/login', loginRouter);
+app.use('/register', registerRouter);
 
-app.get('/', (req, res) => {
-    res.send({ someText: "hello" });
-});
-// 
+//any requests beginning with /login will be handled by login Router
+
+// app.get('/', (req, res) => {
+//     res.send({ someText: "hello" });
+// });
+// // 
 
 
 if (process.env.NODE_ENV === 'production') {
@@ -38,9 +40,16 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     })
 }
+//here we telling the app to serve the static build of the react app. It will redirect all requests to the front end-react
+
 
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, ()=>{
     console.log("Listening on the port")
 });
+
+
+// in index.js need to set the mongoose database connection
+//define the server port
+//any other server settings

@@ -2,11 +2,11 @@ const { Router } = require('express'); //like in react, need to get this bit fro
 const User = require('../models/User');
 const router = Router();
 
-router.get('/login', async (req, res)=> {
+router.get('/', async (req, res)=> {
     
 })
 
-router.post('/login', async(req, res)=>{
+router.post('/', async(req, res)=>{
     let { username, password, email } = req.body
 
 
@@ -20,3 +20,5 @@ router.post('/login', async(req, res)=>{
   
 
 })
+
+module.exports = router; 

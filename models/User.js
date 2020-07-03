@@ -5,21 +5,19 @@ const crypto = require('crypto');
 
 const userSchema = new Schema({
 
-    firstName:{type:'String', required:true, trim: true,},
+    firstname:{type:'String', required:true, trim: true,},
 
     surname:{type:'String',required:true, trim: true,},
-
-    username: {type:'String', required:true, unique: true },
 
     email:{type:'String', lowercase: true,  required:'true', unique:'true',trim: true,},
 
     password:{type:'String',required: true, minlength:[8, 'Password is too short!'], trim:true,},
 
-    phoneNumber:{type: Number, required: [true, 'Please provide your contact number'],trim: true,},
-
     location: {type: 'String',required: true},  //will be a drop-down
 
-    typeOfUser:{type: 'String',required: true}, //drop-down or checkbox?
+    helper:{type: Boolean}, //checkbox?
+
+    helpee:{type: Boolean} //checkbox?
 
 })
 
