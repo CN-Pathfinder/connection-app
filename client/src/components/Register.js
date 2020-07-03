@@ -12,7 +12,7 @@ class Register extends React.Component {
     form_email: ' ',
     form_password: ' ',
     form_location: 'manchester',
-    form_helper: 'help',
+    form_userstatus: 'help',
 
   }
 
@@ -43,7 +43,7 @@ class Register extends React.Component {
       email: this.state.form_email,
       password: this.state.form_password,
       location: this.state.form_location,
-      userstatus: this.state.form_helper
+      userstatus: this.state.form_userstatus
     })
 
     const newreg = await axios.post('/register', body, config);
@@ -101,8 +101,8 @@ class Register extends React.Component {
             <br />
             <div>Are you:</div>
 
-            <label htmlFor="helper">Status:</label>
-            <select name="form_helper" id="helper" onChange={this.formData}>
+            <label htmlFor="userstatus">Status:</label>
+            <select name="form_userstatus" id="userstatus" onChange={this.formData}>
               <option value="help">I require help</option>
               <option value="offer">I am offering help</option>
 

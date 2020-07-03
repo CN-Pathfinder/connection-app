@@ -15,9 +15,7 @@ const userSchema = new Schema({
 
     location: {type: 'String',required: true},  //will be a drop-down
 
-    helper:{type: Boolean}, //checkbox?
-
-    helpee:{type: Boolean} //checkbox?
+    userstatus: {type: 'String', required: true}, //drop-down
 
 })
 
