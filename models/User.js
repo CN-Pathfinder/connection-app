@@ -12,10 +12,13 @@ const userSchema = new Schema({
     email:{type:'String', lowercase: true,  required:'true', unique:'true',trim: true,},
 
     password:{type:'String',required: true, minlength:[8, 'Password is too short!'], trim:true,},
+    //can remove minlength and trim for bcrypt
 
     location: {type: 'String',required: true},  //will be a drop-down
 
-    userstatus: {type: 'String', required: true}, //drop-down
+    userstatus: {type: 'String', required: true}, //will be a a drop-down
+
+    salt: {type:'String', required: true}, 
 
 })
 

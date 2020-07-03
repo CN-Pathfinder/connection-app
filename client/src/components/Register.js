@@ -16,6 +16,8 @@ class Register extends React.Component {
 
   }
 
+  //remember these keys refer to the name of the html elemnet
+
   formData = (e) => {
     this.setState({
       ...this.state,
@@ -46,6 +48,8 @@ class Register extends React.Component {
       userstatus: this.state.form_userstatus
     })
 
+    //updates the state values to be what the user has entered (and so can be passed to the server)
+
     const newreg = await axios.post('/register', body, config);
     // const newregd = await axios.get('/registered', body, config);
 
@@ -65,26 +69,25 @@ class Register extends React.Component {
           <form onSubmit={this.submitForm}>
 
             <label htmlFor="form_firstname">First name:</label>
-            <input name="form_firstname" onChange={this.formData} /> <br /><br />
+            <input name="form_firstname" onChange={this.formData} />
+            <br /><br />
+
             <label htmlFor="form_surname">Surname:</label>
-            <input name="form_surname" onChange={this.formData} /> <br /><br />
+            <input name="form_surname" onChange={this.formData} />
+            <br /><br />
+
             <label htmlFor="form_email">Email address:</label>
-            <input
-              type="email"
-              name="form_email"
-              onChange={this.formData}
-            /> <br /><br />
+            <input type="email" name="form_email" onChange={this.formData} />
+            <br /><br />
+
             <label htmlFor="form_password">Create a password:</label>
-            <input
-              type="password"
-              name="form_password"
-              onChange={this.formData}
-            /><br /><br />
+            <input type="password" name="form_password" onChange={this.formData} />
+            <br /><br />
 
             {/* <label htmlFor ="form_phone"> Phone Number: </label>
             <input type="tel" name="form_phone"/>  */}
 
-            <label>Phone Number:<input type="tel" name="form_phone" onChange={this.formData} /></label>
+            {/* <label>Phone Number:<input type="tel" name="form_phone" onChange={this.formData} /></label> */}
 
             {/* can do it like this as well? then don't need htmlfor and other things */}
 
@@ -102,25 +105,14 @@ class Register extends React.Component {
             <div>Are you:</div>
 
             <label htmlFor="userstatus">Status:</label>
-            <select name="form_userstatus" id="userstatus" onChange={this.formData}>
+              <select name="form_userstatus" id="userstatus" onChange={this.formData}>
               <option value="help">I require help</option>
               <option value="offer">I am offering help</option>
-
-            </select>
-
-
-
-            {/* <input type="checkbox" id="helpee" name="helpee" onChange={this.formData} value="helpee"></input>
-                    <label htmlFor="helpee">I require help</label><br/>
-                 
-            
-            <input type="checkbox" id="helper" name="helper" onChange={this.formData} value="helper"></input>
-                    <label htmlFor="helper">I am offering help</label> */}
-
-
+              </select>
             <br /><br />
+
             <div>Once you register your details, please log in</div><br />
-            <button id="" type="submit">Register details</button>
+            <button id="submit-button" type="submit">Register details</button>
 
           </form>
 
