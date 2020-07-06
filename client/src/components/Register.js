@@ -1,8 +1,9 @@
 import React from "react";
 import './Register.css';
-import RegisterNav from './RegisterNav.js';
+// import RegisterNav from './RegisterNav.js';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import AuthService from '../Services/AuthService';
 
 class Register extends React.Component {
  
@@ -14,7 +15,7 @@ class Register extends React.Component {
     form_passwordcheck: ' ',
     form_location: 'manchester',
     form_userstatus: 'help',
-
+    message: ""
   }
 
   //remember these keys refer to the name of the html element/
@@ -28,44 +29,62 @@ class Register extends React.Component {
     console.log(this.state);
   }
 
+  resetForm = () =>{
+    this.setState({
+      ...this.state,
+      form_firstname: ' ',
+    form_surname: ' ',
+    form_email: ' ',
+    form_password: ' ',
+    form_passwordcheck: ' ',
+    form_location: 'manchester',
+    form_userstatus: 'help'
+    })
+  }
   submitForm = async (e) => {
-    e.preventDefault();
-    //this prevents the form from being submitted  
-
-    const config = {
-      headers: {
-        'Content-Type': 'application/json'
-
+      e.preventDefault();
+      const user = {
+        email: this.state.form_email,
+        password: this.state.form_password,
+        location: this.state.form_location,
+        userstatus: this.state.form_userstatus
       }
+      AuthService.register(user).then(data=>{
+      const { message } = data;
+      this.setState({...this.state, message});
+      this.resetForm();
+      if(!message.msgError){
+      setTimeout(()=>{
+      this.props.history.push('/home');
+      },2000)
+      }
+      });
     }
-
     //must send this with the request in order for express.json on server side to work
 
-    const body = JSON.stringify({
-      firstname: this.state.form_firstname,
-      surname: this.state.form_surname,
-      email: this.state.form_email,
-      password: this.state.form_password,
-      passwordcheck: this.state.form_passwordcheck,
-      location: this.state.form_location,
-      userstatus: this.state.form_userstatus
-    })
+    // const body = JSON.stringify({
+    //   firstname: this.state.form_firstname,
+    //   surname: this.state.form_surname,
+    //   email: this.state.form_email,
+    //   password: this.state.form_password,
+    //   passwordcheck: this.state.form_passwordcheck,
+    //   location: this.state.form_location,
+    //   userstatus: this.state.form_userstatus
+    // })
 
     //updates the state values to be what the user has entered (and so can be passed to the server)
 
-    const newreg = await axios.post('/register', body, config);
+    // const newreg = await axios.post('/register', body, config);
     // const newregd = await axios.get('/registered', body, config);
 
     // axios will send a post request to the server at the /registered endpoint with the body and config information 
     //axios sends a get request to the /register endpoint
     //axios request knows where to make the request because of the proxy we added in the package.json
 
-  }
-
   render() {
     return (
       <div id="registerWrapper">
-        <div id="RegisterNav"><RegisterNav /></div>
+        {/* <div id="RegisterNav"><RegisterNav /></div> */}
         <div id="loginDiv">
 
           <h2>Register your details</h2>

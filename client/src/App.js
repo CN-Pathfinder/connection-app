@@ -1,24 +1,29 @@
-import React, {Component,useContext} from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import React, {Component} from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home';
 import Register from './components/Register.js';
 import Platform from './components/Platform.js';
-import { AuthContext } from './Context/AuthContext';
+import Navbar from './components/Navbar';
+
 
 class App extends Component {
     render() {
-      let {user,setUser,isAuthenticated,setIsAuthenticated } = useContext(AuthContext)
     return (
       <div id="wholePageWrapper">
-        <BrowserRouter>
+        {/* <BrowserRouter>
           <Switch>
             <Route exact path = "/" component = {Home} />
             <Route exact path = "/register" component = {Register} />
             <Route exact path = "/platform" component = {Platform} />
           </Switch>
-        </BrowserRouter>
-        <p>placeholder</p>
+        </BrowserRouter> */}
+        <Router>
+          <Navbar/>
+          <Route exact path="/" component={Home}/>
+          <Route exact path = "/register" component = {Register} />
+          <Route exact path = "/platform" component = {Platform} />
+        </Router>
       </div>
     );
   }};

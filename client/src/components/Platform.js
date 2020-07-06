@@ -1,6 +1,6 @@
 import React from "react";
 import './Platform.css';
-import PlatformNav from './PlaformNav.js';
+// import PlatformNav from './PlaformNav.js';
 
 class Platform extends React.Component {
     render() {
@@ -8,7 +8,7 @@ class Platform extends React.Component {
       <div>
           <div id="platformWrapper">
 
-            <div id="PlatformNav"><PlatformNav /></div>
+            {/* <div id="PlatformNav"><PlatformNav /></div> */}
 
             <div id="locationdiv">
 
