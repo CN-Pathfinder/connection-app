@@ -30,6 +30,11 @@ router.post('/', passport.authenticate('local',{session: false}), (req, res)=>{
     }
 }); 
 
+router.get('/authenticated',passport.authenticate('jwt',{session : false}),(req,res)=>{
+    const {email} = req.user;
+    res.status(200).json({isAuthenticated : true, user : {email}});
+    });
+
 //we defined local in passport.js, so that's where it is coming from
 //session is false because we don't want to store teh user details 
 
