@@ -1,5 +1,6 @@
 module.exports ={
-    mongoURI: 'mongodb+srv://theadmin:Password123abc@cluster0-b5xct.mongodb.net/users?retryWrites=true&w=majority'
+    mongoURI: 'mongodb+srv://theadmin:Password123abc@cluster0-b5xct.mongodb.net/users?retryWrites=true&w=majority',
+    // secretOrKey: "secret",
 }
 
 
