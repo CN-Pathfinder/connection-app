@@ -1,0 +1,17 @@
+#fullModalDiv {
+    height: 400px;
+    width: 600px;
+}
+#modalCloseBtn {
+    float: right;
+    font-weight: bold;
+    font-size: 20px;
+}
+#modalTitle {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 30px;
+}
+#modalText {
+    margin-left: 30px;
+}

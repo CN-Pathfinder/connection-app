@@ -1,10 +1,11 @@
 import React from "react";
 import './PlatformNav.css';
+import AboutModal from './AboutModal';
 
 const PlatformNav = () => {
     return (
         <nav>
-            <div>About app    |</div>
+            <div><AboutModal/>   |</div>
             <div>|   Messages</div>
             <button id="navRegisterBtn"><a href="/">Logout</a></button>
         </nav>
