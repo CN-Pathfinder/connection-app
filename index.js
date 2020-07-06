@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose'); 
 const app = express();
 const path = require('path')
+const cookieParser = require('cookie-parser')
+app.use(cookieParser());
 const keys = require('./config/keys')
 
 mongoose.connect(keys.mongoURI, {
@@ -10,6 +12,7 @@ mongoose.connect(keys.mongoURI, {
     useFindAndModify: false, 
     useUnifiedTopology: true
 }).then(()=>console.log("connected to mongoDB"));
+
 
 
 app.use(express.urlencoded({extended: true}));
@@ -26,11 +29,7 @@ app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 
 //any requests beginning with /login will be handled by login Router
-
-// app.get('/', (req, res) => {
-//     res.send({ someText: "hello" });
-// });
-// // 
+//any requests beginning with /register will be handled by register Router
 
 
 if (process.env.NODE_ENV === 'production') {
@@ -44,6 +43,8 @@ if (process.env.NODE_ENV === 'production') {
 
 
 const PORT = process.env.PORT || 5000;
+
+//environment variable - if PORT doesn't exist, use 5000(for when running locally)
 
 app.listen(PORT, ()=>{
     console.log("Listening on the port")
