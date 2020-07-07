@@ -19,51 +19,56 @@ const Navbar = props => {
 
     const unauthenticatedNavBar = () => {
         return (
-            <ul>
+            <div className="navbardiv">
+            <ul className="list">
+                
                 <div classname="modaldiv"><AboutModal/></div>
                 <Link to="/">
-                    <li className="nav-item nav-link">
+                    <li className="navlink">
                         Home
                 </li>
                 </Link>
                 <Link to="/">
-                    <li className="nav-item nav-link">
+                    <li className="navlink">
                         Login
                 </li>
                 </Link>
                 <Link to="/register">
-                    <li className="nav-item nav-link">
+                    <li className="navlink">
                         Register
                 </li>
                 </Link>
+                    
             </ul>
+            </div>
         )
     }
     const authenticatedNavBar = () => {
         return (
-            <ul>
+            <div className="navbardiv">
+            <ul className="list">
                 <div classname="modaldiv"><AboutModal/></div>
                 <Link to="/platform">
-                    <li className="nav-item nav-link">
+                    <li className="navlink">
                         Platform
                 </li>
                 </Link>
                 <button type="button" className="btn btn-link nav-item nav-link" onClick={onClickLogoutHandler}>Logout</button>
             </ul>
-
+            </div>
         )
     }
     return (
+        
+        <div className="navbardiv">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            {/* <Link to="/">
-                <div className="navbar-brand">Placeholder</div>
-            </Link> */}
             <div className="collapse navbar-collapse" id="navbarText">
                 <div className="navbar-nav mr-auto">
                     {!isAuthenticated ? unauthenticatedNavBar() : authenticatedNavBar()}
                 </div>
             </div>
         </nav>
+        </div>
     )
 }
 
