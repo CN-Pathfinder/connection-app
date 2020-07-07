@@ -1,6 +1,5 @@
 import React, {useState,useContext} from 'react';
 import "./Home.css";
-// import HomeNav from './HomeNav.js';
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import AuthService from "../Services/AuthService";

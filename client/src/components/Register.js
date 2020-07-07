@@ -1,6 +1,5 @@
 import React from "react";
 import './Register.css';
-// import RegisterNav from './RegisterNav.js';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import AuthService from '../Services/AuthService';
