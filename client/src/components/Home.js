@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import AuthService from "../Services/AuthService";
 import { AuthContext } from "../Context/AuthContext";
+import background from '../images/volunteer.jpg';
 
 const Home = props=>{
   const [user,setUser] = useState({
@@ -69,15 +70,14 @@ const Home = props=>{
 
   // render() {
     return (
-      <div id="homeWrapper">
-        {/* <div id="HomeNavDiv">
-          <HomeNav />
-        </div> */}
-
+      <div className="banana">
+      <div id="homeWrapper" >
+        {/* <img classname="backgroundimage" src={background}></img> */}
         <div id="loginDiv">
           <div id="appName">Help people during covid app!</div>
+          <div className="form-wrapper">
           <h2>Log in to your account</h2>
-
+          <br /> <br />
           <form onSubmit={submitForm}>
             <label htmlFor="email">Email address:</label>
             <input
@@ -98,7 +98,8 @@ const Home = props=>{
             <br />
             <button type="submit">Login</button>
           </form>
-
+          </div> 
+          </div>
           {message ? <p>{message}</p> : null}
 
           <br />
@@ -111,7 +112,8 @@ const Home = props=>{
               <Link to="/register">Register here</Link>
             </button>
           </div>
-        </div>
+        
+      </div>
       </div>
     );
   }

@@ -1,0 +1,16 @@
+.navbardiv{
+    background-color: #4dbce7;
+
+}
+.list{
+    margin-top: 0px;
+    margin-bottom: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+.navlink{
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}

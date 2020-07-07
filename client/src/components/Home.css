@@ -1,12 +1,15 @@
-#homeWrapper {
-    background-color: lightskyblue;
+.banana{
+    background-image:url('../images/volunteer.jpg');
     height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+
 }
 #loginDiv {
     font-family: monospace;
 }
 #appName {
-    margin: 50px 0 50px 0;
+    margin: 0;
     font-size: 50px;
     text-align: center;
 }
@@ -14,5 +17,20 @@
     text-align: center;
 }
 #hereToRegisterDiv {
-    margin-top: 20px;
+    display: flex; 
+    flex-direction: column; 
+
+}
+
+.form-wrapper{
+    display: flex; 
+    padding-right: 40px;
+    flex-direction: column; 
+
+}
+
+
+.heretoregisterdiv{
+    display: flex;
+    justify-content: flex-start;
 }

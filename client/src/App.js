@@ -11,13 +11,6 @@ class App extends Component {
     render() {
     return (
       <div id="wholePageWrapper">
-        {/* <BrowserRouter>
-          <Switch>
-            <Route exact path = "/" component = {Home} />
-            <Route exact path = "/register" component = {Register} />
-            <Route exact path = "/platform" component = {Platform} />
-          </Switch>
-        </BrowserRouter> */}
         <Router>
           <Navbar/>
           <Route exact path="/" component={Home}/>
