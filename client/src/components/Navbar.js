@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import AuthService from '../Services/AuthService';
 import { AuthContext } from '../Context/AuthContext';
+import AboutModal from './AboutModal';
+import "./Navbar.css";
 
 const Navbar = props => {
     const { isAuthenticated, user, setIsAuthenticated, setUser } = useContext(AuthContext);
@@ -18,6 +20,7 @@ const Navbar = props => {
     const unauthenticatedNavBar = () => {
         return (
             <ul>
+                <div classname="modaldiv"><AboutModal/></div>
                 <Link to="/">
                     <li className="nav-item nav-link">
                         Home
@@ -39,6 +42,7 @@ const Navbar = props => {
     const authenticatedNavBar = () => {
         return (
             <ul>
+                <div classname="modaldiv"><AboutModal/></div>
                 <Link to="/platform">
                     <li className="nav-item nav-link">
                         Platform
@@ -51,9 +55,9 @@ const Navbar = props => {
     }
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <Link to="/">
+            {/* <Link to="/">
                 <div className="navbar-brand">Placeholder</div>
-            </Link>
+            </Link> */}
             <div className="collapse navbar-collapse" id="navbarText">
                 <div className="navbar-nav mr-auto">
                     {!isAuthenticated ? unauthenticatedNavBar() : authenticatedNavBar()}
