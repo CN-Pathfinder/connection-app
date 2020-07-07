@@ -32,12 +32,6 @@ const userSchema = new Schema({
         trim: true,
     },
 
-    passwordcheck:{
-        type: String,
-        // required: true, 
-        minlength:[8, 'Password is too short!'],
-        trim: true, 
-    },//can remove minlength and trim for bcrypt
 
     location: {
         type: String,

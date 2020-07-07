@@ -6,22 +6,29 @@ import { Link } from 'react-router-dom';
 import AuthService from '../Services/AuthService';
 
 class Register extends React.Component {
- 
+
   state = {
     form_firstname: ' ',
     form_surname: ' ',
     form_email: ' ',
     form_password: ' ',
-    form_passwordcheck: ' ',
+    passwordcheck: ' ',
     form_location: 'manchester',
     form_userstatus: 'help',
-    message: ""
+    passwordmessage: '',
+    passwordmatch: false,
+    formmessage: '',
+    message: '',
   }
 
   //remember these keys refer to the name of the html element/
   //here we are initialising the default state. Most are empty, except the location/user status
 
+
+
   formData = (e) => {
+    console.log('formData method working!')
+
     this.setState({
       ...this.state,
       [e.target.name]: e.target.value
@@ -29,57 +36,88 @@ class Register extends React.Component {
     console.log(this.state);
   }
 
-  resetForm = () =>{
+  resetForm = () => {
     this.setState({
       ...this.state,
       form_firstname: ' ',
-    form_surname: ' ',
-    form_email: ' ',
-    form_password: ' ',
-    form_passwordcheck: ' ',
-    form_location: 'manchester',
-    form_userstatus: 'help'
+      form_surname: ' ',
+      form_email: ' ',
+      form_password: ' ',
+      passwordcheck: ' ',
+      form_location: 'manchester',
+      form_userstatus: 'help'
     })
   }
+
+  // passcheckHandler = (e) => {
+  //   console.log('passCheckHandler method working!')
+  //   this.setState({
+  //     ...this.state,
+  //     [e.target.name]: e.target.value
+  //   })
+  //   console.log('passCheckHandler')
+  //   console.log (this.state)
+  //   if (this.state.form_password !== this.state.passwordcheck) {
+  //     this.setState({
+  //       ...this.state,
+  //       passwordmessage: 'Passwords do not match',
+  //       passwordmatch: false
+  //     })
+  //   } else {
+  //     this.setState({
+  //       ...this.state,
+  //       passwordmessage: 'Passwords match',
+  //       passwordmatch: true
+
+  //     })
+  //   }
+  // }
+
+
   submitForm = async (e) => {
-      e.preventDefault();
-      const user = {
-        email: this.state.form_email,
-        password: this.state.form_password,
-        location: this.state.form_location,
-        userstatus: this.state.form_userstatus
-      }
-      AuthService.register(user).then(data=>{
-      const { message } = data;
-      this.setState({...this.state, message});
-      this.resetForm();
-      if(!message.msgError){
-      setTimeout(()=>{
-      this.props.history.push('/home');
-      },2000)
-      }
-      });
+    e.preventDefault();
+    const user = {
+      firstname: this.state.form_firstname,
+      surname: this.state.form_surname,
+      email: this.state.form_email,
+      password: this.state.form_password,
+      location: this.state.form_location,
+      userstatus: this.state.form_userstatus
     }
-    //must send this with the request in order for express.json on server side to work
+    const { form_firstname,
+      form_surname,
+      form_email,
+      form_password,
+      form_location,
+      form_userstatus } = this.state
 
-    // const body = JSON.stringify({
-    //   firstname: this.state.form_firstname,
-    //   surname: this.state.form_surname,
-    //   email: this.state.form_email,
-    //   password: this.state.form_password,
-    //   passwordcheck: this.state.form_passwordcheck,
-    //   location: this.state.form_location,
-    //   userstatus: this.state.form_userstatus
-    // })
+    // if ( form_firstname == '' && form_surname == ''&& form_email == ''&& form_password == ''){
+    //   this.setState({
+    //     ...this.state,
+    //     formmessage: 'Please complete all fields'
+    // })}
+    // else{
+    AuthService.register(user).then(data => {
+      const { message } = data;
+      this.setState({ ...this.state, message });
+      this.resetForm();
+      if (!message.msgError) {
+        setTimeout(() => {
+          this.props.history.push('/home');
+        }, 2000)
+      }
+    });
+  //}
+}
+  //must send this with the request in order for express.json on server side to work
 
-    //updates the state values to be what the user has entered (and so can be passed to the server)
 
-    // const newreg = await axios.post('/register', body, config);
-    // const newregd = await axios.get('/registered', body, config);
 
-    // axios will send a post request to the server at the /registered endpoint with the body and config information 
-    //axios sends a get request to the /register endpoint
-    //axios request knows where to make the request because of the proxy we added in the package.json
+  // if(!firstname|| !surname || !email || !password ||!passwordcheck ||!location ||!userstatus){
+  //   return res.status(400).json({
+  //       message: 'Please complete all fields'
+  // })
+  // } 
 
   render() {
     return (
@@ -109,9 +147,10 @@ class Register extends React.Component {
             <input type="password" name="form_password" onChange={this.formData} />
             <br /><br />
 
-            <label htmlFor="form_passwordcheck">Enter password again:</label>
-            <input type="password" name="form_passwordcheck" onChange={this.formData} />
-            <br /><br />
+            {/* <label htmlFor= "passwordcheck">Enter password again:</label>
+            <input type="password" name="passwordcheck" onChange={this.passcheckHandler} />
+            <p>{this.state.passwordmessage}</p>
+            <br /><br /> */}
 
             {/* <label htmlFor ="form_phone"> Phone Number: </label>
             <input type="tel" name="form_phone"/>  */}
@@ -134,14 +173,15 @@ class Register extends React.Component {
             <div>Are you:</div>
 
             <label htmlFor="userstatus">Status:</label>
-              <select name="form_userstatus" id="userstatus" onChange={this.formData}>
+            <select name="form_userstatus" id="userstatus" onChange={this.formData}>
               <option value="help">I require help</option>
               <option value="offer">I am offering help</option>
-              </select>
+            </select>
             <br /><br />
 
             <div>Once you register your details, please log in</div><br />
             <button id="submit-button" type="submit">Register details</button>
+            {/* <p>{this.state.formmessage}</p> */}
 
           </form>
 
