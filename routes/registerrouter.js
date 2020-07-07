@@ -9,20 +9,9 @@ const User = require('../models/User');
 
 
 router.post('/', async (req, res) => {
-    let { firstname, surname, email, password, passwordcheck, location, userstatus } = req.body //the body has been parsed to a javascript object so we can interact with them
+    let { firstname, surname, email, password, location, userstatus } = req.body //the body has been parsed to a javascript object so we can interact with them
     // Here we have create the above variables. 
 
-    //validation
-
-    if(!firstname|| !surname || !email || !password ||!passwordcheck ||!location ||!userstatus){
-        return res.status(400).json({
-            message: 'Please complete all fields'
-    })
-    } if(password !== passwordcheck){
-        return res.status(400).json({
-            message: 'Passwords do not match'
-        })
-    } 
 
     //check if user already exists
 

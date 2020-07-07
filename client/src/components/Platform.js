@@ -22,7 +22,7 @@ class Platform extends React.Component {
                 <br/> 
 
               <div id="locationdropdown">
-                <label for="location">Location:</label>
+                <label htmlFor="location">Location:</label>
                 <select name="location" id="location">
                   <option value="manchester">Manchester</option>
                   <option value="chester">Chester</option>
@@ -35,9 +35,9 @@ class Platform extends React.Component {
                   <div>Please choose one or both from the options below:</div><br/>
               
                   <input type="checkbox" id="helpee" name="helpee" value="helpee"></input>
-                    <label for="helpee">I require help</label><br/>
+                    <label htmlFor="helpee">I require help</label><br/>
                   <input type="checkbox" id="helper" name="helper" value="helper"></input>
-                    <label for="helper">I am offering help</label>
+                    <label htmlFor="helper">I am offering help</label>
                   
                 </form>
                 </div>
