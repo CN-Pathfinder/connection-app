@@ -21,59 +21,48 @@ const Navbar = props => {
     const unauthenticatedNavBar = () => {
         return (
             <div className="navbardiv">
-              
-
                 <ul className="list">
 
                     <div id="modaldiv"><AboutModal /></div>
                     <Link to="/" className="navlink">
-                        <li className="navlink">
-                            Home
-                </li>
+                        <li className="navlink"> Home</li>
                     </Link>
                     <Link to="/" className="navlink">
-                        <li className="navlink">
-                            Login
-                </li>
+                        <li className="navlink">Login</li>
                     </Link>
                     <Link to="/register" className="navlink">
-                        <li className="navlink">
-                            Register
-                </li>
+                        <li className="navlink"> Register </li>
                     </Link>
-
                 </ul>
             </div>
         )
     }
     const authenticatedNavBar = () => {
         return (
-            <div className="navbardiv">
-                <ul className="list">
-                    <div classname="modaldiv"><AboutModal /></div>
+            <div className="authenticatednavbardiv">
+                <ul className="authenticatedlist">
                     <Link to="/platform">
-                        <li className="navlink">
-                            Platform
-                </li>
+                        <li className="authenticatednavlink"> Home </li>
                     </Link>
-                    <button type="button" className="btn btn-link nav-item nav-link" onClick={onClickLogoutHandler}>Logout</button>
+                    <div classname="modaldiv"><AboutModal /></div>
+                    <button type="button" className="logoutbutton" onClick={onClickLogoutHandler}>Logout</button>
                 </ul>
             </div>
         )
     }
-    return (
+        return (
 
-        <div className="navbardiv">
-        <img src={Logo} id="nav-logo" />
-            <nav className="listItems">
-                <div className="collapse navbar-collapse" id="navbarText">
-                    <div>
-                        {!isAuthenticated ? unauthenticatedNavBar() : authenticatedNavBar()}
+            <div className="navbardiv">
+            <img src={Logo} id="nav-logo" /> 
+                <nav className="listItems">
+                    <div className="collapse navbar-collapse" id="navbarText">
+                        <div>
+                            {!isAuthenticated ? unauthenticatedNavBar() : authenticatedNavBar()}
+                        </div>
                     </div>
-                </div>
-            </nav>
-        </div>
-    )
-}
+                 </nav>
+            </div>
+        )
+    }
 
 export default Navbar;

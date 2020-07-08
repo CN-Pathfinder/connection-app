@@ -1,5 +1,5 @@
 import React from "react";
-import './Platform.css';
+import './Profile.css';
 
 class Platform extends React.Component {
     render() {
@@ -20,7 +20,7 @@ class Platform extends React.Component {
 
                 <br/> 
 
-              <div id="locationdropdown">
+              <div id="location-dropdown">
                 <label htmlFor="location">Location:</label>
                 <select name="location" id="location">
                   <option value="manchester">Manchester</option>

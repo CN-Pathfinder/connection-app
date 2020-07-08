@@ -31,8 +31,8 @@ const customStyles = {
    
       return (
         <div>
-          <button onClick={openModal}>About App</button>
-          <Modal  id="fullModalDiv"
+          <button className="modal-button" onClick={openModal}>About App</button>
+          <Modal id="fullModalDiv"
             isOpen={modalIsOpen}
             //onAfterOpen={afterOpenModal}
             onRequestClose={closeModal}

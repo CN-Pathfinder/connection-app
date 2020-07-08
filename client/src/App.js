@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home';
 import Register from './components/Register.js';
-import Platform from './components/Platform.js';
+import Platform from './components/Profile.js';
 import Navbar from './components/Navbar';
 import Messages from './components/Messages';
 
@@ -16,7 +16,7 @@ class App extends Component {
           <Navbar/>
           <Route exact path="/" component={Home}/>
           <Route exact path = "/register" component = {Register} />
-          <Route exact path = "/platform" component = {Platform} />
+          <Route exact path = "/profile" component = {Platform} />
           <Route exact path = "/messages" component = {Messages} />
         </Router>
       </div>

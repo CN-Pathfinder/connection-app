@@ -123,7 +123,7 @@ class Register extends React.Component {
       <div id="registerWrapper">
       
           <div className="register-container">
-          <div id="loginDiv">
+          <div id="registerDiv">
 
           <h2 id="register-title">Register your details</h2>
           <form className="register-form" onSubmit={this.submitForm}>
@@ -179,7 +179,9 @@ class Register extends React.Component {
             <br /><br />
 
             <div>Once you register your details, please log in</div><br />
-            <button id="submit-button" type="submit">Register details</button>
+            <button id="submit-button-login" type="submit">Register details
+              <Link to="/"></Link>
+            </button>
             {/* <p>{this.state.formmessage}</p> */}
 
           </form>
