@@ -102,7 +102,7 @@ const Home = props => {
                 type="email"
                 onChange={formData}
                 name="email"
-                placeholder="email"  />
+                placeholder= "email"  />
                
             
                 
@@ -132,7 +132,7 @@ const Home = props => {
     </div>
   );
 }
-//}
+
 
 export default Home;
 

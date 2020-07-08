@@ -1,7 +1,5 @@
-
-
 a:link{
-
+    
 
 }
 
@@ -11,11 +9,11 @@ a:visited:{
 }
 
 a:hover:{
-
+    color: #3be2ab;
 }
 
 a:active{ 
-
+    color: #3be2ab;
 }
 
 .navbardiv{
@@ -27,7 +25,7 @@ a:active{
 
 #nav-logo{
     height: 100px;
-    padding: 10px
+    padding: 10px;
 }
 .list, .listItems{
     margin-top: 0px;
@@ -43,6 +41,7 @@ a:active{
 
 #modaldiv{
     padding-right: 15px;
+
 }
 .navlink{
     cursor: pointer;
@@ -51,9 +50,26 @@ a:active{
     flex-basis:80px;
     align-content: center; 
     padding-right: 10px;
-    
+    padding-top: 7px;
+
 }
 
 #navbarText{
     padding-right: 10px; 
+}
+.logoutbutton{
+    padding: 10px;
+    border: none; 
+    /* width: 100%;  */
+    border-radius: 20px; 
+    /* width: 75%; */
+}
+.logoutbutton:hover{
+    background: #3be2ab;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 5px #3be2ab,
+                0 0 25px #3be2ab,
+                0 0 50px #3be2ab,
+                0 0 100px #3be2ab;
 }

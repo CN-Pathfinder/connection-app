@@ -1,6 +1,8 @@
 #fullModalDiv {
     height: 400px;
     width: 600px;
+    background-color: #3be2ab;
+    color: white; 
 }
 #modalCloseBtn {
     float: right;
@@ -14,4 +16,21 @@
 }
 #modalText {
     margin-left: 30px;
+}
+
+.modal-button{
+    padding: 10px;
+    border: none; 
+    /* width: 100%;  */
+    border-radius: 20px; 
+    /* width: 75%; */
+}
+.modal-button:hover{
+    background: #3be2ab;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 5px #3be2ab,
+                0 0 25px #3be2ab,
+                0 0 50px #3be2ab,
+                0 0 100px #3be2ab;
 }

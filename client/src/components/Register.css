@@ -7,7 +7,7 @@
 
 }
 
-#loginDiv{
+#registerDiv{
     display:flex; 
     flex-direction: column;
     
@@ -33,4 +33,20 @@
     background-color: rgba(77, 188, 231, 0.8);
     padding: 20px 20px; 
     
+}
+#submit-button-login{
+    padding: 10px;
+    border: none; 
+    /* width: 100%;  */
+    border-radius: 20px; 
+    /* width: 75%; */
+}
+#submit-button-login:hover{
+    background: #3be2ab;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 5px #3be2ab,
+                0 0 25px #3be2ab,
+                0 0 50px #3be2ab,
+                0 0 100px #3be2ab;
 }
