@@ -4,6 +4,7 @@ import AuthService from '../Services/AuthService';
 import { AuthContext } from '../Context/AuthContext';
 import AboutModal from './AboutModal';
 import "./Navbar.css";
+import Logo from '../images/logowhite.png'
 
 const Navbar = props => {
     const { isAuthenticated, user, setIsAuthenticated, setUser } = useContext(AuthContext);
@@ -20,54 +21,57 @@ const Navbar = props => {
     const unauthenticatedNavBar = () => {
         return (
             <div className="navbardiv">
-            <ul className="list">
-                
-                <div classname="modaldiv"><AboutModal/></div>
-                <Link to="/">
-                    <li className="navlink">
-                        Home
+              
+
+                <ul className="list">
+
+                    <div id="modaldiv"><AboutModal /></div>
+                    <Link to="/" className="navlink">
+                        <li className="navlink">
+                            Home
                 </li>
-                </Link>
-                <Link to="/">
-                    <li className="navlink">
-                        Login
+                    </Link>
+                    <Link to="/" className="navlink">
+                        <li className="navlink">
+                            Login
                 </li>
-                </Link>
-                <Link to="/register">
-                    <li className="navlink">
-                        Register
+                    </Link>
+                    <Link to="/register" className="navlink">
+                        <li className="navlink">
+                            Register
                 </li>
-                </Link>
-                    
-            </ul>
+                    </Link>
+
+                </ul>
             </div>
         )
     }
     const authenticatedNavBar = () => {
         return (
             <div className="navbardiv">
-            <ul className="list">
-                <div classname="modaldiv"><AboutModal/></div>
-                <Link to="/platform">
-                    <li className="navlink">
-                        Platform
+                <ul className="list">
+                    <div classname="modaldiv"><AboutModal /></div>
+                    <Link to="/platform">
+                        <li className="navlink">
+                            Platform
                 </li>
-                </Link>
-                <button type="button" className="btn btn-link nav-item nav-link" onClick={onClickLogoutHandler}>Logout</button>
-            </ul>
+                    </Link>
+                    <button type="button" className="btn btn-link nav-item nav-link" onClick={onClickLogoutHandler}>Logout</button>
+                </ul>
             </div>
         )
     }
     return (
-        
+
         <div className="navbardiv">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <div className="collapse navbar-collapse" id="navbarText">
-                <div className="navbar-nav mr-auto">
-                    {!isAuthenticated ? unauthenticatedNavBar() : authenticatedNavBar()}
+        <img src={Logo} id="nav-logo" />
+            <nav className="listItems">
+                <div className="collapse navbar-collapse" id="navbarText">
+                    <div>
+                        {!isAuthenticated ? unauthenticatedNavBar() : authenticatedNavBar()}
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
         </div>
     )
 }
