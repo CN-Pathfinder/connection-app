@@ -1,36 +1,106 @@
 .banana{
-    background-image:url('../images/volunteer.jpg');
+    background-image:url('../images/volunteergreen.png');
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
 
 }
-#loginDiv {
-    font-family: monospace;
+#login-div {
+    text-align: center;
 }
-#appName {
+#app-name {
     margin: 0;
     font-size: 50px;
     text-align: center;
+    padding-bottom: 70px;
 }
-#loginDiv {
-    text-align: center;
+
+.container-home{
+    display:flex; 
+    align-content: center; 
 }
-#hereToRegisterDiv {
+
+
+#here-to-register{
     display: flex; 
     flex-direction: column; 
+    padding-left:150px; 
+    color: white; 
 
 }
+
+/* #here-to-register a{
+
+} */
 
 .form-wrapper{
     display: flex; 
-    padding-right: 40px;
     flex-direction: column; 
+    margin-left: auto;   
+    margin-right: 150px;
+    height: 400px; 
+    width: 305px; 
+    border-radius: 20px;
+    background-color: rgba(77, 188, 231, 0.8);
+    padding: 20px 20px; 
+    
 
 }
 
+.form-label-div{
+    display: flex; 
+    flex-direction: column; 
+    padding:20px 20px;
 
-.heretoregisterdiv{
-    display: flex;
-    justify-content: flex-start;
+}
+
+.form-wrapper input[type=email], input[type=password]{
+    padding: 10px;
+    border: 0;
+    border-bottom: 1px solid #eee; 
+    border-radius: 20px; 
+    transition: .3s border-color; 
+    width: 75%;
+    
+    
+}
+
+input[type=email]:hover, input[type=password]:hover{
+    border: 1px solid #aaa; 
+}
+
+/* 
+input[type=email]:focus, input[type=password]:focus{
+
+} */
+
+
+.submit-button-home, .submit-button-register{
+    padding: 10px;
+    border: none; 
+    width: 100%; 
+    border-radius: 20px; 
+    width: 75%;
+}
+
+
+.submit-button-home:hover{
+background: #3be2ab;
+color: #fff;
+border-radius: 20px;
+box-shadow: 0 0 5px #3be2ab,
+            0 0 25px #3be2ab,
+            0 0 50px #3be2ab,
+            0 0 100px #3be2ab;
+}
+
+
+.submit-button-register:hover{
+background: #3be2ab;
+color: #fff;
+border-radius: 20px;
+box-shadow: 0 0 5px #3be2ab,
+            0 0 25px #3be2ab,
+            0 0 50px #3be2ab,
+            0 0 100px #3be2ab;
 }

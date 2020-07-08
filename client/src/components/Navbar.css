@@ -1,16 +1,59 @@
-.navbardiv{
-    background-color: #4dbce7;
+
+
+a:link{
+
 
 }
-.list{
+
+
+a:visited:{
+
+}
+
+a:hover:{
+
+}
+
+a:active{ 
+
+}
+
+.navbardiv{
+    background-color: #4dbce7;
+    display: flex; 
+    justify-content: flex-end; 
+
+}
+
+#nav-logo{
+    height: 100px;
+    padding: 10px
+}
+.list, .listItems{
     margin-top: 0px;
     margin-bottom: 0;
     list-style: none;
+    
+    margin-left: auto; 
     display: flex;
-    justify-content: space-around;
+    padding:20px;
+
+
+}
+
+#modaldiv{
+    padding-right: 15px;
 }
 .navlink{
-    display: flex;
-    justify-content: space-around;
     cursor: pointer;
+    color: white;
+    text-decoration:none; 
+    flex-basis:80px;
+    align-content: center; 
+    padding-right: 10px;
+    
+}
+
+#navbarText{
+    padding-right: 10px; 
 }

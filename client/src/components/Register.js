@@ -121,12 +121,12 @@ class Register extends React.Component {
   render() {
     return (
       <div id="registerWrapper">
-        {/* <div id="RegisterNav"><RegisterNav /></div> */}
-        <div id="loginDiv">
+      
+          <div className="register-container">
+          <div id="loginDiv">
 
-          <h2>Register your details</h2>
-
-          <form onSubmit={this.submitForm}>
+          <h2 id="register-title">Register your details</h2>
+          <form className="register-form" onSubmit={this.submitForm}>
 
             <label htmlFor="form_firstname">First name:</label>
             <input name="form_firstname" onChange={this.formData} />
@@ -183,7 +183,7 @@ class Register extends React.Component {
             {/* <p>{this.state.formmessage}</p> */}
 
           </form>
-
+        </div>
         </div>
       </div>
     );

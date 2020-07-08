@@ -1,4 +1,36 @@
 #registerWrapper {
-    background-color: lightskyblue;
+    
+    background-image:url('../images/volunteergreen.png');
     height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+#loginDiv{
+    display:flex; 
+    flex-direction: column;
+    
+}
+#register-title{
+    margin-top:0px; 
+}
+
+.register-container{
+    display:flex;
+    justify-content:flex-end; 
+
+}
+
+.register-form{
+    display: flex; 
+    flex-direction: column; 
+    margin-left: auto;   
+    margin-right: 150px;
+    height: 575px; 
+    width: 305px; 
+    border-radius: 20px;
+    background-color: rgba(77, 188, 231, 0.8);
+    padding: 20px 20px; 
+    
 }
