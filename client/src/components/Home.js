@@ -29,7 +29,7 @@ const Home = props => {
       if (isAuthenticated) {
         authContext.setUser(user);
         authContext.setIsAuthenticated(isAuthenticated);
-        props.history.push('/platform');
+        props.history.push('/profile');
       }
       else
         setMessage(message);
