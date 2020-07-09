@@ -55,23 +55,53 @@ export default{
     
         //}
     }, 
-    location : location =>{
+    
+    userLocation : location =>{
         return fetch('/getprofile/location', {
             method : "post",
             body : JSON.stringify(location),
             headers : {
                 'Content-Type' : 'application/json'
             }
-        }).then(res => res.json())
-        .then(data => data);
-    },
-}    
+        }).then(res =>{
+            if(res.status !==500){
+                return res.json().then(data => data)
+            } else
+                return({ message: 'Error has occured'})
+            })
+         
+
+        }
+    
+
+}
 
 
 
 
-// }, usersLocations: ()=>{
-//         return fetch('/getprofile/location').then(res=>{
-//             return res.json().then(data=>data); 
-//         })
-//     }
+
+
+
+
+    // userLocation : location =>{
+    //     return fetch('/getprofile/location', {
+    //         method : "post",
+    //         body : JSON.stringify(location),
+    //         headers : {
+    //             'Content-Type' : 'application/json'
+    //         }
+    //     }).then(res =>{
+    //         if(res.status !==500){
+    //             return res.json().then(data => data)
+    //         } else
+    //             return({ message: 'Error has occured'})
+    //         })
+
+    //     }
+
+
+    // userLocation: ()=>{
+    //     return fetch('/getprofile/location').then(res=>{
+    //         return res.json().then(data=>data); 
+    //     })
+    //    }

@@ -28,20 +28,31 @@ const Profile = props => {
 
   const selectData = e => {
     setLocation({...location, [e.target.name]: e.target.value })
+    console.log(location)
   }
   
   const submitForm = e =>{
     e.preventDefault();
-    AuthService.usersLocations(location).then(data=> {
-    const {isAuthenticated, location} = data;
-    if(isAuthenticated) {
-        authContext.setLocation(location);
-        authContext.setIsAuthenticated(isAuthenticated); 
-    }
+    AuthService.userLocation(location).then(data=> {
+      console.log(data)//returns an array
+      console.log(data.users[1])
 
-  })
+  
 
-} 
+      })
+
+    // const {isAuthenticated, location} = data;
+    // if(isAuthenticated) {
+    //     authContext.setLocation(location);
+    //     authContext.setIsAuthenticated(isAuthenticated); 
+     
+    
+   
+  }
+
+ 
+
+
   
     return (
 
@@ -65,7 +76,7 @@ const Profile = props => {
                 </div>
 
                 <br/> 
-              {/* <form onSubmit={submitForm}> */}
+              <form onSubmit={submitForm}>
               <div id="location-dropdown">
               
                 <label htmlFor="location">Location:</label>
@@ -75,8 +86,10 @@ const Profile = props => {
                   <option value="luton">Luton</option>
                   <option value="bradford">Bradford</option>
                 </select></div> 
+                <button onSubmit={submitForm}type="submit"> Search </button>
+                  
 
-                {/* </form>  */}
+                </form> 
 
 
                 <div id="locationcheckbox">
@@ -87,10 +100,13 @@ const Profile = props => {
                     <label htmlFor="helpee">I require help</label><br/>
                   <input type="checkbox" id="helper" name="helper" value="helper"></input>
                     <label htmlFor="helper">I am offering help</label>
-                    <button onSubmit={submitForm}type="submit"> Search </button>
-                  
+                   
                 </form>
               
+
+              <ul>
+               <li></li>
+              </ul>
               </div>
             </div>
 

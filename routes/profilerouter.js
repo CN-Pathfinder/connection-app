@@ -26,15 +26,16 @@ router.get('/', passport.authenticate('jwt',{ session: false }), (req, res) => {
 })
 
 
-router.get('/location', passport.authenticate('jwt', {sessions: false}), (req,res) =>{
-        // const { location } = req.body.location
+router.post('/location', passport.authenticate('jwt', {session: false}), (req,res) =>{
+        const { location } = req.body
         User.find({location: location }, (err, users)=>{
             if(err)
                 res.status(500).json({message: 'error has occured'});
             else{
                 res.status(200).json({users})
+        
             }
         })
-})
+});
 
 module.exports = router;
