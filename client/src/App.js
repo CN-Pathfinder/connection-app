@@ -34,6 +34,8 @@ import Messages from './components/Messages';
 import PrivateRoute from './hocs/PrivateRoute';
 import UnPrivateRoute from './hocs/UnPrivateRoute';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
+import './App.css';
+
 
 function App() {
   return (

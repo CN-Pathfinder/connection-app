@@ -6,6 +6,9 @@ import './Profile.css';
 const Profile = props => {
   const [profile,setProfile] = useState({});
   //profile is current value of state, setProfile is state setter - if we call it with a new value the state will be re-set and the component re-rendered 
+  const [location, setLocation] = useState({
+      location: "", 
+  });
 
   //profile.firstname
   //profile.location
@@ -23,6 +26,23 @@ const Profile = props => {
   }, [])
   //[] stops it from running again and again, just runs once when the component is loaded. Can also put variables in here, and when they are updated, useEffect will run again
 
+  const selectData = e => {
+    setLocation({...location, [e.target.name]: e.target.value })
+  }
+  
+  const submitForm = e =>{
+    e.preventDefault();
+    AuthService.usersLocations(location).then(data=> {
+    const {isAuthenticated, location} = data;
+    if(isAuthenticated) {
+        authContext.setLocation(location);
+        authContext.setIsAuthenticated(isAuthenticated); 
+    }
+
+  })
+
+} 
+  
     return (
 
       <div>
@@ -45,15 +65,19 @@ const Profile = props => {
                 </div>
 
                 <br/> 
-
+              {/* <form onSubmit={submitForm}> */}
               <div id="location-dropdown">
+              
                 <label htmlFor="location">Location:</label>
-                <select name="location" id="location">
+                <select onChange={selectData} name="location" id="location">
                   <option value="manchester">Manchester</option>
                   <option value="chester">Chester</option>
                   <option value="luton">Luton</option>
                   <option value="bradford">Bradford</option>
                 </select></div> 
+
+                {/* </form>  */}
+
 
                 <div id="locationcheckbox">
                 <form>
@@ -63,6 +87,7 @@ const Profile = props => {
                     <label htmlFor="helpee">I require help</label><br/>
                   <input type="checkbox" id="helper" name="helper" value="helper"></input>
                     <label htmlFor="helper">I am offering help</label>
+                    <button onSubmit={submitForm}type="submit"> Search </button>
                   
                 </form>
               

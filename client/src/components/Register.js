@@ -128,11 +128,10 @@ class Register extends React.Component {
           <h2 id="register-title">Register your details</h2>
           <form className="register-form" onSubmit={this.submitForm}>
 
+            <div className="form-label-div">
             <label htmlFor="form_firstname">First name:</label>
             <input name="form_firstname" onChange={this.formData} />
             <br /><br />
-
-            {/* remember onChange runs the formData method */}
 
             <label htmlFor="form_surname">Surname:</label>
             <input name="form_surname" onChange={this.formData} />
@@ -179,11 +178,11 @@ class Register extends React.Component {
             <br /><br />
 
             <div>Once you register your details, please log in</div><br />
-            <button id="submit-button-login" type="submit">Register details
+            <button id="submit-button-register" type="submit">Register details
               <Link to="/"></Link>
             </button>
             {/* <p>{this.state.formmessage}</p> */}
-
+            </div>
           </form>
         </div>
         </div>
