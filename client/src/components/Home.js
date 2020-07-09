@@ -24,12 +24,12 @@ const Home = props => {
   const submitForm = e => {
     e.preventDefault();
     AuthService.login(user).then(data => {
-      console.log(data);
+      //console.log(data);
       const { isAuthenticated, user, message } = data;
       if (isAuthenticated) {
         authContext.setUser(user);
         authContext.setIsAuthenticated(isAuthenticated);
-        props.history.push('/platform');
+        props.history.push('/profile');
       }
       else
         setMessage(message);

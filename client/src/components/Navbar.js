@@ -41,7 +41,7 @@ const Navbar = props => {
         return (
             <div className="authenticatednavbardiv">
                 <ul className="authenticatedlist">
-                    <Link to="/platform">
+                    <Link to="/profile">
                         <li className="authenticatednavlink"> Home </li>
                     </Link>
                     <div classname="modaldiv"><AboutModal /></div>

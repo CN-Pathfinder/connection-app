@@ -17,14 +17,14 @@ router.post('/', async (req, res) => {
 
     User.findOne({ email }, async (err, userDoc) => {
         if (err) {
-            console.log(err)
+            //console.log(err)
         } if (userDoc) { 
-            console.log('User already exists!')
+            //console.log('User already exists!')
             res.status(400).json({
                 message: 'A user with this email address is already registered!'
             })
         } else {
-            console.log('email available - you may register!')
+            //console.log('email available - you may register!')
             const newUser = new User({
                 firstname,
                 surname,

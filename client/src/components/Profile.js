@@ -1,13 +1,39 @@
-import React from "react";
+import React, {useState,useContext,useEffect} from 'react';
+import { AuthContext } from '../Context/AuthContext';
+import AuthService from '../Services/AuthService';
 import './Profile.css';
 
-class Platform extends React.Component {
-    render() {
-    return (
-      <div>
-          <div id="platformWrapper">
+const Profile = props => {
+  const [profile,setProfile] = useState({});
+  //profile is current value of state, setProfile is state setter - if we call it with a new value the state will be re-set and the component re-rendered 
 
-            {/* <div id="PlatformNav"><PlatformNav /></div> */}
+  //profile.firstname
+  //profile.location
+  //profile.surname
+  //profile.userstatus
+
+  const authContext = useContext(AuthContext);
+
+
+  //componentDidMount
+  useEffect( ()=>{
+         AuthService.profileInformation(authContext.user).then(data =>{
+      setProfile(data.user);
+    })
+  }, [])
+  //[] stops it from running again and again, just runs once when the component is loaded. Can also put variables in here, and when they are updated, useEffect will run again
+
+    return (
+
+      <div>
+      {/* {profile.firstname}
+      {console.log(profile)   }    */}
+          <div id="platformWrapper">
+          <ul>
+          <li> Name: {profile.firstname} {profile.surname}</li>
+          <li> location: {profile.location}</li>
+          <li> Status: {profile.userstatus}</li>
+          </ul>
 
             <div id="locationdiv">
 
@@ -39,15 +65,14 @@ class Platform extends React.Component {
                     <label htmlFor="helper">I am offering help</label>
                   
                 </form>
-                </div>
               
+              </div>
             </div>
-                
 
-
-          </div>
+            </div>
+          
       </div>
-    );
-  }}
+    )
   
-  export default Platform;
+    }
+  export default Profile;
