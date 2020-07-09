@@ -27,12 +27,12 @@ router.get('/', passport.authenticate('jwt',{ session: false }), (req, res) => {
 
 
 router.post('/location', passport.authenticate('jwt', {session: false}), (req,res) =>{
-        const { location } = req.body
-        User.find({location: location }, (err, users)=>{
+        const { location, userstatus } = req.body
+        User.find({location: location, userstatus: userstatus }, (err, users)=>{
             if(err)
                 res.status(500).json({message: 'error has occured'});
             else{
-                res.status(200).json({users})
+                res.status(200).json(users)
         
             }
         })
