@@ -1,0 +1,27 @@
+#messagePage {
+    width: 100wv;
+    background-color: lightgreen;
+    display: flex;
+    
+}
+#contacts {
+    background-color: lightpink;
+    margin: 30px 15px 30px 30px;
+}
+#messagingContainer {
+    background-color: lightseagreen;
+    margin: 30px 30px 30px 15px;
+}
+#messageHistory {
+    background-color: lightskyblue;
+}
+#sendMessageContainer {
+    background-color: lightyellow;
+    margin-top: 30px;
+}
+#sendingToFromDiv {
+    padding: 10px;
+}
+#inputMessageDiv {
+    padding: 10px;
+}
