@@ -87,7 +87,7 @@ const Home = props => {
             <br />
           <br />
           <button className="submit-button-register">
-            <Link to="/register">Register here</Link>
+            <Link to="/register" style={{textDecoration: 'none'}}>Register here</Link>
           </button>
         </div>
           <div className="form-wrapper">

@@ -11,7 +11,7 @@
     display: flex;
     justify-content: center;
 }
-#location{
+#location, #userstatus{
     width: 150px;
     color: black;
     
@@ -46,7 +46,14 @@
                 0 0 50px #3be2ab,
                 0 0 100px #3be2ab;
 }
-.search-button-div{
+
+#search-button-div{
     display: flex;
     justify-content: center;
+}
+
+.dropdown-div{
+    display: flex;
+    justify-content: space-evenly;
+
 }
