@@ -1,3 +1,4 @@
+
 export default{
     login : user =>{
         return fetch('/login', {
@@ -32,5 +33,26 @@ export default{
             else
             return { isAuthenticated : false, user : {username: "", role: ""}};
         });
-    }
-}
+    },
+
+    profileInformation: ()=>{
+        //console.log(user.email)
+        return fetch('/getprofile').then(res=>{
+            return res.json().then(data => data);
+        });
+        // , {
+        //     method : "get",
+        //     body : JSON.stringify(user.email),
+        //     headers : {
+        //         'Content-Type' : 'application/json'
+        //     }
+            // .then(res =>{
+            //     if(res.status !== 500){
+            //         return res.json().then(data => data);
+            //     }else 
+            //         return{ message: 'Error has occurred'}
+            // })
+    
+        //}
+    }    
+}    

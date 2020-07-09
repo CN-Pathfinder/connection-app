@@ -1,9 +1,10 @@
+const express = require('express');
 const { Router } = require('express'); //like in react, need to get this bit from express
 const router = Router();
-const passport = require('passport');
-const passportConfig = require('../config/passport');
+const passport = require('passport'); 
+const passportConfig =require('../config/passport');
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
 

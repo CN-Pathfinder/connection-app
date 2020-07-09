@@ -23,11 +23,13 @@ app.use(express.json());
 const registerRouter = require('./routes/registerrouter')
 const loginRouter = require('./routes/loginrouter')
 const messageRouter = require('./routes/messagerouter')
+const profileRouter = require('./routes/profilerouter')
 
 
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 app.use('/messages', messageRouter);
+app.use('/getprofile', profileRouter);
 
 //any requests beginning with /login will be handled by login Router
 //any requests beginning with /register will be handled by register Router
