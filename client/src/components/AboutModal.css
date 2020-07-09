@@ -1,18 +1,30 @@
+
 #fullModalDiv {
     height: 400px;
     width: 600px;
-    background-color: #3be2ab;
-    color: white; 
+    /* background-color: #3be2ab; */
+    color: white;
+}
+.bigmodaldiv{
+    background-color: rgb(96, 172, 216);
+    width:100%;
+    height:100%;
+    /* border: 20px solid rgb(96, 172, 216); */
+}
+#fullModalDiv.ReactModal__Content.ReactModal__Content--after-open{
+    padding:0px;
 }
 #modalCloseBtn {
     float: right;
     font-weight: bold;
     font-size: 20px;
+    background-color: rgb(39,102,159);
+    color: white;
 }
 #modalTitle {
     font-size: 25px;
     font-weight: bold;
-    margin: 30px;
+    padding: 30px;
 }
 #modalText {
     margin-left: 30px;
@@ -21,9 +33,8 @@
 .modal-button{
     padding: 10px;
     border: none; 
-    /* width: 100%;  */
+    width: 100%; 
     border-radius: 20px; 
-    /* width: 75%; */
 }
 .modal-button:hover{
     background: #3be2ab;
