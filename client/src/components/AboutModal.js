@@ -9,7 +9,7 @@ const customStyles = {
       right                 : 'auto',
       bottom                : 'auto',
       marginRight           : '-50%',
-      transform             : 'translate(-50%, -50%)'    
+      transform             : 'translate(-50%, -50%)'
     }
   };
 
@@ -39,7 +39,7 @@ const customStyles = {
             style={customStyles}
             contentLabel="Example Modal"
           >
-
+            <div className="bigmodaldiv">
             <button id="modalCloseBtn" onClick={closeModal}>X</button>
             <div id="modalTitle">About the app</div>
             <div id="modalText">This app is to connect people that want to provide help for others during lockdown. <br/>
@@ -47,6 +47,7 @@ const customStyles = {
 
 
 
+            </div>
             </div>
           </Modal>
         </div>

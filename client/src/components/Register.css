@@ -1,20 +1,23 @@
-/* #formlabel-div{
-    display: flex; 
-    flex-direction: column; 
-    padding-left:45px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-right: 20px;
-    justify-content: center;
-} */
-/* .form-label-div{
+.form-register-div{
+    padding-left: 40px;
+}
+
+#location{
     padding: 10px;
     border: 0;
     border-bottom: 1px solid #eee; 
     border-radius: 20px; 
     transition: .3s border-color; 
-    width: 75%;
-} */
+    width: 82%;
+}
+#userstatus{
+    padding: 10px;
+    border: 0;
+    border-bottom: 1px solid #eee; 
+    border-radius: 20px; 
+    transition: .3s border-color; 
+    width: 82%;
+}
 .register-container input[type=email], input[type=password], input[name=form_firstname], input[name=form_surname]{
     padding: 10px;
     border: 0;
@@ -38,7 +41,10 @@
     
 }
 #register-title{
-    margin-top:0px; 
+    margin-top:10px; 
+    padding-left: 45px;
+    color: white;
+    margin-bottom: 15px;
 }
 
 .register-container{
@@ -67,7 +73,7 @@
     border-radius: 20px; 
     /* width: 75%; */
 }
-#submit-button-login:hover{
+#submit-button-register:hover{
     background: #3be2ab;
     color: #fff;
     border-radius: 20px;

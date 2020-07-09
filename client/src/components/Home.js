@@ -83,7 +83,7 @@ const Home = props => {
 
          <div className="container-home">
          <div id="here-to-register">
-          Need an account?
+          <h2 id="accounttitle">Need an account?</h2>
             <br />
           <br />
           <button className="submit-button-register">

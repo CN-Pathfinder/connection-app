@@ -128,7 +128,7 @@ class Register extends React.Component {
           <h2 id="register-title">Register your details</h2>
           <form className="register-form" onSubmit={this.submitForm}>
 
-            <div className="form-label-div">
+            <div className="form-register-div">
             <label htmlFor="form_firstname">First name:</label>
             <input name="form_firstname" onChange={this.formData} />
             <br /><br />
@@ -159,7 +159,7 @@ class Register extends React.Component {
 
             <div>Select your location:
             <div id="locationdropdown">
-                <label htmlFor="location">Location:</label>
+                <label htmlFor="location"></label>
                 <select name="form_location" id="location" onChange={this.formData}>
                   <option value="manchester">Manchester</option>
                   <option value="chester">Chester</option>
@@ -170,7 +170,7 @@ class Register extends React.Component {
             <br />
             <div>Are you:</div>
 
-            <label htmlFor="userstatus">Status:</label>
+            <label htmlFor="userstatus"></label>
             <select name="form_userstatus" id="userstatus" onChange={this.formData}>
               <option value="help">I require help</option>
               <option value="offer">I am offering help</option>
@@ -178,11 +178,12 @@ class Register extends React.Component {
             <br /><br />
 
             <div>Once you register your details, please log in</div><br />
+            </div>
             <button id="submit-button-register" type="submit">Register details
               <Link to="/"></Link>
             </button>
             {/* <p>{this.state.formmessage}</p> */}
-            </div>
+            
           </form>
         </div>
         </div>
