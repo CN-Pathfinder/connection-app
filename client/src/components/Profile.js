@@ -85,7 +85,7 @@ const Profile = props => {
                 <p id="explanation">If you have found a user that may suit your needs then click the message button to get in contact with them.</p>
                 </div>
 
-                <br/> 
+                <br/>  <div className="dropdown-div">
               <form onSubmit={submitForm}>
               <div id="location-dropdown">
               
@@ -95,44 +95,29 @@ const Profile = props => {
                   <option value="chester">Chester</option>
                   <option value="luton">Luton</option>
                   <option value="bradford">Bradford</option>
-                </select></div> 
-
-                
-                
-                <div id="search-button-div">
-                <button className="search-button" onSubmit={submitForm}type="submit"> Search </button>
-                  </div>
+                </select></div>
 
                 </form> 
 
 
-
+             
                 <div id="locationcheckbox">
                 
-                  <div>Please choose one of the options below:</div><br/>
+                  {/* <div>Please choose one of the options below:</div><br/> */}
 
                   
-                <label htmlFor="userstatus">Location:</label>
+                <label htmlFor="userstatus">I am looking for someone:  </label>
                 <select onChange={selectData} name="userstatus" id="userstatus">
-                  <option value="offer">I am offering help</option>
-                  <option value="help">I require help</option>
+                  <option value="offer">Offering help</option>
+                  <option value="help">Requiring help</option>
                   
-                 
-                </select></div> 
-              
-                  {/* <input type="checkbox"  onchange={selectData}id="helpee" name="helpee" value="helpee"></input>
-                    <label htmlFor="helpee">I require help</label><br/>
-                  <input type="checkbox" onchange={selectData} id="helper" name="helper" value="helper"></input> */}
-                    
-                   <button onSubmit={submitForm}type="submit"> Search </button>
-                  
-                </form>
-              
+                </select>
+                </div> 
+              </div>
 
-              <ul>
-                  
-               
-              </ul>
+                    <div id="search-button-div">
+                <button className="search-button" onSubmit={submitForm}type="submit"> Search </button>
+                  </div>
               </div>
             </div>
 
