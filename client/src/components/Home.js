@@ -91,7 +91,7 @@ const Home = props => {
           </button>
         </div>
           <div className="form-wrapper">
-            <h2>Log in to your account</h2>
+            <h2 id="login-title">Log in to your account</h2>
             <br /> <br />
             <form onSubmit={submitForm}>
             <div className="form-label-div">
@@ -117,7 +117,7 @@ const Home = props => {
               </div>
               <br />
               <br />
-              <button className="submit-button-home" type="submit">Login</button>
+              <button className="submit-button-login" type="submit">Login</button>
             </form>
           </div>
         

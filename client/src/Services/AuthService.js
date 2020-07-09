@@ -54,5 +54,24 @@ export default{
             // })
     
         //}
-    }    
+    }, 
+    location : location =>{
+        return fetch('/getprofile/location', {
+            method : "post",
+            body : JSON.stringify(location),
+            headers : {
+                'Content-Type' : 'application/json'
+            }
+        }).then(res => res.json())
+        .then(data => data);
+    },
 }    
+
+
+
+
+// }, usersLocations: ()=>{
+//         return fetch('/getprofile/location').then(res=>{
+//             return res.json().then(data=>data); 
+//         })
+//     }

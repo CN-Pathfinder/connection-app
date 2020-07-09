@@ -1,3 +1,28 @@
+/* #formlabel-div{
+    display: flex; 
+    flex-direction: column; 
+    padding-left:45px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    justify-content: center;
+} */
+/* .form-label-div{
+    padding: 10px;
+    border: 0;
+    border-bottom: 1px solid #eee; 
+    border-radius: 20px; 
+    transition: .3s border-color; 
+    width: 75%;
+} */
+.register-container input[type=email], input[type=password], input[name=form_firstname], input[name=form_surname]{
+    padding: 10px;
+    border: 0;
+    border-bottom: 1px solid #eee; 
+    border-radius: 20px; 
+    transition: .3s border-color; 
+    width: 75%;
+}
 #registerWrapper {
     
     background-image:url('../images/volunteergreen.png');
@@ -27,15 +52,16 @@
     flex-direction: column; 
     margin-left: auto;   
     margin-right: 150px;
-    height: 575px; 
+    height: 565px; 
     width: 305px; 
     border-radius: 20px;
     background-color: rgba(77, 188, 231, 0.8);
     padding: 20px 20px; 
     
 }
-#submit-button-login{
+#submit-button-register{
     padding: 10px;
+    margin-top: 10px;
     border: none; 
     /* width: 100%;  */
     border-radius: 20px; 
