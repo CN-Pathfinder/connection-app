@@ -1,44 +1,37 @@
 a:link{
-    
 
 }
-
-
 a:visited:{
 
 }
-
 a:hover:{
     color: #3be2ab;
 }
-
 a:active{ 
     color: #3be2ab;
 }
-
 .navbardiv{
     background-color: #4dbce7;
     display: flex; 
     justify-content: flex-end; 
-
 }
 
 #nav-logo{
     height: 100px;
     padding: 10px;
 }
-.list, .listItems{
+.list, .listItems, .authenticatedlist{
     margin-top: 0px;
     margin-bottom: 0;
     list-style: none;
-    
     margin-left: auto; 
     display: flex;
     padding:20px;
 
-
 }
-
+li.authenticatednavlink{
+    text-decoration: none;
+}
 #modaldiv{
     padding-right: 15px;
 
@@ -53,7 +46,16 @@ a:active{
     padding-top: 7px;
 
 }
-
+.authenticatednavlink{
+    cursor: pointer;
+    color: white;
+    text-decoration:none; 
+    flex-basis:80px;
+    align-content: center; 
+    padding-right: 10px;
+    padding-top: 7px;
+    
+}
 #navbarText{
     padding-right: 10px; 
 }

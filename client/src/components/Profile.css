@@ -1,16 +1,52 @@
 #platformWrapper {
-    background-color: lightskyblue;
+    background-color: rgb(39,102,159);
+    color: white;
     height: 100vh;
 }
 #locationtext{
-    border: solid slategray 10px;
+    display: flex;
+    flex-direction: column;
 }
-#locationdiv{
-    border: solid red 10px;
+#explanation{
+    display: flex;
+    justify-content: center;
+}
+#location{
+    width: 150px;
+    color: black;
+    
 }
 #location-dropdown{
-    border: solid blue 10px;
+    padding-left: 50px;
 }
-#locationcheckbox{
-    border: solid purple 10px;
+
+#profile-info{
+    margin-top: 0px;
+    padding-top: 10px;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: bolder;
+    font-size: larger;
+}
+.search-button{
+    padding: 10px;
+    border: none; 
+    width: 20%; 
+    border-radius: 20px; 
+    margin-top: 20px;
+    /* margin-left: 450px; */
+}
+.search-button:hover{
+    background: #3be2ab;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 5px #3be2ab,
+                0 0 25px #3be2ab,
+                0 0 50px #3be2ab,
+                0 0 100px #3be2ab;
+}
+.search-button-div{
+    display: flex;
+    justify-content: center;
 }

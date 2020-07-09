@@ -69,34 +69,44 @@ const Profile = props => {
       {/* {profile.firstname}
       {console.log(profile)   }    */}
           <div id="platformWrapper">
-          <ul>
+            <div className="profile-info-div">
+          <ul id="profile-info">
           <li> Name: {profile.firstname} {profile.surname}</li>
-          <li> location: {profile.location}</li>
-          <li> Status: {profile.userstatus}</li>
+          <li> Location: {profile.location}</li>
+          <li> Help status: {profile.userstatus}</li>
           </ul>
-
+            </div>
             <div id="locationdiv">
 
               <div id="locationtext">
-                Choose your location to see registered users in that area.<br/>
-                You can filter by if you are looking for help or if you require help.<br/>
-                You can then look at a users profile to see more details about their circumstances.<br/>
-                If you have found a user that may suit your needs then click the message button to get in contact with them.
+                <p id="explanation">Choose your location from the drop down list to see registered users in that area.<br/></p>
+                <p id="explanation">You can filter by if you are looking for help or if you require help.<br/></p>
+                <p id="explanation">You can then look at a users profile to see more details about their circumstances.<br/></p>
+                <p id="explanation">If you have found a user that may suit your needs then click the message button to get in contact with them.</p>
                 </div>
 
                 <br/> 
               <form onSubmit={submitForm}>
               <div id="location-dropdown">
               
-                <label htmlFor="location">Location:</label>
+                <label htmlFor="location">Location: </label>
                 <select onChange={selectData} name="location" id="location">
                   <option value="manchester">Manchester</option>
                   <option value="chester">Chester</option>
                   <option value="luton">Luton</option>
                   <option value="bradford">Bradford</option>
                 </select></div> 
+
                 
                 
+                <div id="search-button-div">
+                <button className="search-button" onSubmit={submitForm}type="submit"> Search </button>
+                  </div>
+
+                </form> 
+
+
+
                 <div id="locationcheckbox">
                 
                   <div>Please choose one of the options below:</div><br/>
