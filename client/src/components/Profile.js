@@ -2,12 +2,14 @@ import React, {useState,useContext,useEffect} from 'react';
 import { AuthContext } from '../Context/AuthContext';
 import AuthService from '../Services/AuthService';
 import './Profile.css';
+import { set } from 'mongoose';
 
 const Profile = props => {
   const [profile,setProfile] = useState({});
   //profile is current value of state, setProfile is state setter - if we call it with a new value the state will be re-set and the component re-rendered 
   const [location, setLocation] = useState({
-      location: "", 
+      location: "",
+      userstatus: "",
   });
 
   //profile.firstname
@@ -27,20 +29,27 @@ const Profile = props => {
   //[] stops it from running again and again, just runs once when the component is loaded. Can also put variables in here, and when they are updated, useEffect will run again
 
   const selectData = e => {
-    setLocation({...location, [e.target.name]: e.target.value })
+    setLocation({...location,[e.target.name]: e.target.value })
     console.log(location)
   }
-  
+   
   const submitForm = e =>{
     e.preventDefault();
     AuthService.userLocation(location).then(data=> {
       console.log(data)//returns an array
-      console.log(data.users[1])
-
+     
+      
+      // const location = data;
+      // const returnedUsers = location.map((returneduser, index) =>{
+      //   return(<li key={index}>{returneduser}</li>)
   
+      // })
 
+
+        
       })
 
+     
     // const {isAuthenticated, location} = data;
     // if(isAuthenticated) {
     //     authContext.setLocation(location);
@@ -87,6 +96,9 @@ const Profile = props => {
                   <option value="luton">Luton</option>
                   <option value="bradford">Bradford</option>
                 </select></div> 
+
+                
+                
                 <div id="search-button-div">
                 <button className="search-button" onSubmit={submitForm}type="submit"> Search </button>
                   </div>
@@ -94,27 +106,39 @@ const Profile = props => {
                 </form> 
 
 
+
                 <div id="locationcheckbox">
-                <form>
-                  <div>Please choose one or both from the options below:</div><br/>
+                
+                  <div>Please choose one of the options below:</div><br/>
+
+                  
+                <label htmlFor="userstatus">Location:</label>
+                <select onChange={selectData} name="userstatus" id="userstatus">
+                  <option value="offer">I am offering help</option>
+                  <option value="help">I require help</option>
+                  
+                 
+                </select></div> 
               
-                  <input type="checkbox" id="helpee" name="helpee" value="helpee"></input>
+                  {/* <input type="checkbox"  onchange={selectData}id="helpee" name="helpee" value="helpee"></input>
                     <label htmlFor="helpee">I require help</label><br/>
-                  <input type="checkbox" id="helper" name="helper" value="helper"></input>
-                    <label htmlFor="helper">I am offering help</label>
-                   
+                  <input type="checkbox" onchange={selectData} id="helper" name="helper" value="helper"></input> */}
+                    
+                   <button onSubmit={submitForm}type="submit"> Search </button>
+                  
                 </form>
               
 
               <ul>
-               <li></li>
+                  
+               
               </ul>
               </div>
             </div>
 
             </div>
           
-      </div>
+      
     )
   
     }
