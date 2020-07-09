@@ -28,6 +28,20 @@ class Messages extends React.Component {
       });
   };
 
+    // componentDidMount() {
+    //     axios
+    //         .get("/messages")
+    //         .then(messageHistory => function (response) {
+    //             console.log("success");
+    //             console.log(response);
+    //         })
+    //         .catch(function (error) {
+    //             console.log("failure");
+    //             console.log(error);
+    //         })
+    //     }
+
+
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
@@ -37,7 +51,11 @@ class Messages extends React.Component {
       <div id="messagePage">
         <div id="contacts">Contacts you have previously messaged</div>
         <div id="messagingContainer">
-          <div id="messageHistory">Message history</div>
+          <div id="messageHistory">Message history
+            <ul>
+                <li></li>
+            </ul>
+          </div>
           <div id="sendMessageContainer">
             <form onSubmit={this.handleSubmit}>
                 <div id="sendingToFromDiv">
