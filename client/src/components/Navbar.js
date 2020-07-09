@@ -24,9 +24,9 @@ const Navbar = props => {
                 <ul className="list">
 
                     <div id="modaldiv"><AboutModal /></div>
-                    <Link to="/" className="navlink">
+                    {/* <Link to="/" className="navlink">
                         <li className="navlink"> Home</li>
-                    </Link>
+                    </Link> */}
                     <Link to="/" className="navlink">
                         <li className="navlink">Login</li>
                     </Link>
@@ -41,8 +41,11 @@ const Navbar = props => {
         return (
             <div className="authenticatednavbardiv">
                 <ul className="authenticatedlist">
-                    <Link to="/profile">
+                    <Link to="/profile" style={{textDecoration: 'none'}}>
                         <li className="authenticatednavlink"> Home </li>
+                    </Link>
+                    <Link to="/messages" style={{textDecoration: 'none'}}>
+                        <li className="authenticatednavlink"> Messages </li>
                     </Link>
                     <div classname="modaldiv"><AboutModal /></div>
                     <button type="button" className="logoutbutton" onClick={onClickLogoutHandler}>Logout</button>
