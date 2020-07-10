@@ -71,9 +71,9 @@ const Profile = props => {
           <div id="platformWrapper">
             <div className="profile-info-div">
           <ul id="profile-info">
-          <li> Name: {profile.firstname} {profile.surname}</li>
-          <li> Location: {profile.location}</li>
-          <li> Help status: {profile.userstatus}</li>
+          <li> Hi, {profile.firstname}! How are you? </li>
+          <li> Your Current Location: {profile.location}</li>
+          <li> Help Status: {profile.userstatus}</li>
           </ul>
             </div>
             <div id="locationdiv">

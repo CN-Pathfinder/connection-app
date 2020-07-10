@@ -44,7 +44,20 @@ const customStyles = {
             <div id="modalTitle">About the app</div>
             <div id="modalText">This app is to connect people that want to provide help for others during lockdown. <br/>
             To use, register and login.
+            <br>
+            </br>
+            <br/> 
+            What is it?
+            <br>
+            </br>
+            <br/> 
+Anyone can volunteer. It can be very rewarding and is a great way to:
 
+meet new people
+gain new or use existing skills
+get experience
+make a big difference to your community
+There are lots of easy ways to give your time to help others – from having a cup of tea with an elderly neighbour, to helping out in your local area or making a regular commitment to volunteer with a charity or community group.
 
 
             </div>
