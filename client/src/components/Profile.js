@@ -86,43 +86,45 @@ const Profile = props => {
           </div>
 
           <br />
+
           <div className="dropdown-div">
             <form onSubmit={submitForm}>
-              <div id="location-dropdown">
+              <div id="lucydiv">
+                <div id="location-dropdown">
 
-                <label htmlFor="location">Location: </label>
-                <select onChange={selectData} name="location" id="location">
-                  <option value="manchester">Manchester</option>
-                  <option value="chester">Chester</option>
-                  <option value="luton">Luton</option>
-                  <option value="bradford">Bradford</option>
-                </select></div>
+                  <label htmlFor="location">Location: </label>
+                  <select onChange={selectData} name="location" id="location">
+                    <option value="manchester">Manchester</option>
+                    <option value="chester">Chester</option>
+                    <option value="luton">Luton</option>
+                    <option value="bradford">Bradford</option>
+                  </select></div>
 
-              <div id="locationcheckbox">
+                <div id="locationcheckbox">
 
-                <label htmlFor="userstatus">I am looking for someone:  </label>
-                <select onChange={selectData} name="userstatus" id="userstatus">
-                  <option value="offer">Offering help</option>
-                  <option value="help">Requiring help</option>
-                </select>
-              </div> 
+                  <label htmlFor="userstatus">I am looking for someone:  </label>
+                  <select onChange={selectData} name="userstatus" id="userstatus">
+                    <option value="offer">Offering help</option>
+                    <option value="help">Requiring help</option>
+                  </select>
+                </div>
                 {/* </div> */}
-
-            <div id="search-button-div">
-              <button className="search-button" type="submit"> Search </button>
-            </div>
-                </form>
-                <ul>
-                 <li>
+              </div>
+              <div id="search-button-div">
+                <button className="search-button" type="submit"> Search </button>
+              </div>
+            </form></div>
+          <ul>
+            <li>
               {/* return users here with map */}
-                </li>
-               </ul>
+            </li>
+          </ul>
+
 
         </div>
-      </div>
 
+      </div>
     </div>
-    </div> 
 
   )
 }
