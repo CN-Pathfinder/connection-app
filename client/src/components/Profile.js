@@ -24,11 +24,11 @@ const Profile = props => {
     })
   }, [location])
   //[] stops it from running again and again, just runs once when the component is loaded. Can also put variables in here, and when they are updated, useEffect will run again
-  useEffect( ()=>{
-    AuthService.userLocation(authContext.user).then(data =>{
+  useEffect(() => {
+    AuthService.userLocation(authContext.user).then(data => {
       setLocation(data.user)
     })
-  },[])
+  }, [])
   const selectData = e => {
     setLocation({ ...location, [e.target.name]: e.target.value })
     console.log(location)
@@ -47,7 +47,7 @@ const Profile = props => {
       //   return(<li key={index}>{returneduser}</li>)
       // }
     })
-    const returnedUsers = location 
+    const returnedUsers = location
     console.log(returnedUsers)
     // const {isAuthenticated, location} = data;
     // if(isAuthenticated) {
@@ -57,17 +57,23 @@ const Profile = props => {
   const items = []
   for (const [index, locationinfo] of data.entries()) {
     items.push(
-    <ul key={index}>
-      <li>{locationinfo.firstname}</li>
-      <li>{locationinfo.location}</li>
-    </ul>
+      <ul key={index}>
+        <li>{locationinfo.firstname}</li>
+        <li>{locationinfo.location}</li>
+      </ul>
     )
   }
   return (
     <div>
-      {/* {profile.firstname}
-      {console.log(profile)   }    */}
+
       <div id="platformWrapper">
+        <div className="profile-info-div">
+          <ul id="profile-info">
+            <li> Hi, {profile.firstname}! How are you? </li>
+            <li> Your Current Location: {profile.location}</li>
+            <li> Help Status: {profile.userstatus}</li>
+          </ul>
+        </div>
         <div id="locationdiv">
           <div id="locationtext">
             <p id="explanation">Choose your location from the drop down list to see registered users in that area.<br /></p>
@@ -95,18 +101,18 @@ const Profile = props => {
                   </select>
                 </div>
                 {/* </div> */}
-            </div> 
-            <div id="search-button-div">
-              <button className="search-button" type="submit"> Search </button>
-            </div>
-                </form>
               </div>
-              <div className="profile-info-div">
-                 {items}
-               </div>
+              <div id="search-button-div">
+                <button className="search-button" type="submit"> Search </button>
+              </div>
+            </form>
+          </div>
+          <div className="profile-info-div">
+            {items}
+          </div>
         </div>
-        </div>
-    </div> 
+      </div>
+    </div>
   )
 }
 export default Profile;
