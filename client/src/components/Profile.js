@@ -78,7 +78,7 @@ const Profile = props => {
           <br />
           <div className="dropdown-div">
             <form onSubmit={submitForm}>
-              <div id="lucydiv">
+              <div id="lucy-div">
                 <div id="location-dropdown">
                   <label htmlFor="location">Location: </label>
                   <select onChange={selectData} name="location" id="location">

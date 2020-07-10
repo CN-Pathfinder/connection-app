@@ -59,7 +59,7 @@
     /* flex-direction: row;
     justify-content: space-between; */
 }
-#lucydiv{
+#lucy-div{
     display: flex;
     justify-content: space-evenly;
 }
