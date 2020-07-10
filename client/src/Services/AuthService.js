@@ -71,8 +71,13 @@ export default{
             })
          
 
+        },
+        userLocation: (location)=>{
+            //console.log(user.email)
+            return fetch('/getprofile/location').then(res=>{
+                return res.json().then(data => data);
+            });
         }
-    
 
 }
 
@@ -105,3 +110,23 @@ export default{
     //         return res.json().then(data=>data); 
     //     })
     //    }
+
+
+
+
+    // deleteUser : (user) => {
+    //     return fetch('profile/delete', {
+    //         method : "post",
+    //         body : JSON.stringify(user),
+    //         headers : {
+    //             'Content-Type' : 'application/json'
+    //         }
+    //     }).then(response=>{
+    //         if(response.status !== 401){
+    //             return "Successfully deleted the user.";
+    //         }
+    //         else {
+    //             return {message: 'error'};
+    //         } 
+    //     });
+    // },
