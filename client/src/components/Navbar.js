@@ -24,9 +24,9 @@ const Navbar = props => {
                 <ul className="list">
 
                     <div id="modaldiv"><AboutModal /></div>
-                    {/* <Link to="/" className="navlink">
+                    <Link to="/" className="navlink">
                         <li className="navlink"> Home</li>
-                    </Link> */}
+                    </Link>
                     <Link to="/" className="navlink">
                         <li className="navlink">Login</li>
                     </Link>
