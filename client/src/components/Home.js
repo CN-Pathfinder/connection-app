@@ -6,6 +6,7 @@ import AuthService from "../Services/AuthService";
 import { AuthContext } from "../Context/AuthContext";
 import background from '../images/volunteer.jpg';
 import { FaUser } from 'react-icons/fa';
+import { GiPadlock } from 'react-icons/gi'
 
 
 const Home = props => {
@@ -77,7 +78,7 @@ const Home = props => {
         
         <div id="login-div">
 
-          <div id="app-name">Vol-Connect - help others and request help</div>
+          {/* <div id="app-name">Vol-Connect - help others and request help</div> */}
 
           </div> 
 
@@ -107,7 +108,7 @@ const Home = props => {
             
                 
               <br /> <br />
-              <label htmlFor="password" className="login-form-labels">Password:</label>
+              <label htmlFor="password" className="login-form-labels"><GiPadlock/>Password:</label>
               <input
                 type="password"
                 onChange={formData}

@@ -28,12 +28,15 @@
     color: white; 
 
 }
-
+.login-form-labels{
+    color: white;
+}
 .form-wrapper{
     display: flex; 
     flex-direction: column; 
     margin-left: auto;   
     margin-right: 150px;
+    margin-top: 20px;
     height: 400px; 
     width: 305px; 
     border-radius: 20px;
@@ -80,9 +83,12 @@ input[type=email]:hover, input[type=password]:hover{
     border: none; 
     width: 100%; 
     border-radius: 20px; 
+    color: black;
     /* width: 75%; */
 }
-
+.submit-button-register{
+    color: black;
+}
 .submit-button-login:hover{
 background: #3be2ab;
 color: #fff;
