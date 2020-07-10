@@ -4,7 +4,9 @@ const router = Router();
 const Message = require('../models/Message');
 
 
-router.get('/', async (req, res) => {
+router.get('/get', async (req, res) => {
+
+    console.log(req.query.users)
 
     const sender = await Message.find({
         sender: req.query.sender,
