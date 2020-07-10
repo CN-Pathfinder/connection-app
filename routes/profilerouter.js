@@ -28,7 +28,7 @@ router.get('/', passport.authenticate('jwt',{ session: false }), (req, res) => {
 
 router.post('/location', passport.authenticate('jwt', {session: false}), (req,res) =>{
         const { location, userstatus } = req.body
-        User.find({location: location, userstatus: userstatus }, (err, users)=>{
+        User.find({location: location, userstatus: userstatus }, 'firstname location', (err, users)=>{
             if(err)
                 res.status(500).json({message: 'error has occured'});
             else{
