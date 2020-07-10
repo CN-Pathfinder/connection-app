@@ -20,11 +20,11 @@ export default{
         }).then(res => res.json())
         .then(data => data);
     },
-    // logout : ()=>{
-    //     return fetch('/')
-    //     .then(res=> res.json())
-    //     .then(data => data);
-    // },
+    logout : ()=>{
+        return fetch('/getprofile/logout')
+        .then(res=> res.json())
+        .then(data => data);
+    },
     isAuthenticated : ()=>{
         return fetch('/login/authenticated')
         .then(res=>{

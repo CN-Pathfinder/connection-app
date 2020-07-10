@@ -38,4 +38,9 @@ router.post('/location', passport.authenticate('jwt', {session: false}), (req,re
         })
 });
 
+router.get('/logout', passport.authenticate('jwt',{session : false}), (req,res)=>{
+    res.clearCookie('access_token');
+    res.json({user:{email: ""}, success : true});
+});
+
 module.exports = router;
