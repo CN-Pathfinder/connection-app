@@ -23,7 +23,19 @@
     border-radius: 20px;
     height: 68vh;
     display: flex;
+    flex-direction: column;
     padding: 10px;
+
+}
+#messageHistoryTitle {
+    font-size: 20px;
+    font-weight: bold;
+}
+#messagesUL {
+    list-style: none;
+}
+#listSender {
+    font-weight: bold;
 }
 #sendMessageContainer {
     background-color: rgba(77, 188, 231, 0.8);;
@@ -35,4 +47,37 @@
 }
 #inputMessageDiv {
     padding: 10px;
+}
+#recipInput {
+    padding: 10px;
+    border: 0;
+    border-bottom: 1px solid #eee; 
+    border-radius: 20px; 
+    transition: .3s border-color; 
+    width: 30%;
+}
+#messageTextArea {
+    padding: 10px;
+    border: 0;
+    border-bottom: 1px solid #eee; 
+    border-radius: 20px; 
+    transition: .3s border-color; 
+    width: 50%;
+}
+#sendMessageBtn {
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
+    border: none; 
+    border-radius: 20px; 
+    
+}
+#sendMessageBtn:hover{
+    background: #3be2ab;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 5px #3be2ab,
+                0 0 25px #3be2ab,
+                0 0 50px #3be2ab,
+                0 0 100px #3be2ab;
 }
