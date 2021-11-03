@@ -33,7 +33,7 @@
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "typescript": "^3.9.6",
-    "validator": "^13.1.1"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "concurrently": "^5.2.0",
